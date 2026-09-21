@@ -44,11 +44,11 @@ Fluxo de Trabalho Robusto: A combinação do Makefile com os scripts cria um flu
 
 ## Aplicação Deployada
 
-Este projeto implanta a aplicação **Cadastro de Nomes com Node.js & PostgreSQL**, cujo código-fonte está disponível no repositório: [dhuberto/docker](https://github.com/dhuberto/docker).
+Este projeto implanta a aplicação **Cadastro de Nomes com GO & PostgreSQL**, cujo código-fonte está disponível no repositório: [dhuberto/docker](https://github.com/dhuberto/docker).
 
 ### Sobre a Aplicação
 
-A aplicação é uma **aplicação web monolítica com renderização no servidor (SSR)**, desenvolvida para demonstrar na prática como construir, estruturar e containerizar um ecossistema focado em **Node.js** e banco de dados **PostgreSQL** utilizando as melhores práticas de Docker.
+A aplicação é uma **aplicação web monolítica com renderização no servidor (SSR)**, desenvolvida para demonstrar na prática como construir, estruturar e containerizar um ecossistema focado em **Go** e banco de dados **PostgreSQL** utilizando as melhores práticas de Docker.
 
 **Funcionalidades principais:**
 - **Cadastro Simples:** Permite o envio de nomes através de um formulário web dinâmico.
@@ -60,7 +60,7 @@ A aplicação é uma **aplicação web monolítica com renderização no servido
 A aplicação é executada em dois containers Docker orquestrados dentro da instância EC2 provisionada:
 
 1. **Container `postgres-db`**: Banco de dados PostgreSQL, que persiste os dados em um volume Docker.
-2. **Container `nodejs-app`**: Aplicação Node.js que se conecta ao banco de dados via rede interna do Docker.
+2. **Container `nodejs-app`**: Aplicação Go que se conecta ao banco de dados via rede interna do Docker.
 
 A comunicação entre os containers é feita através de uma rede Docker interna chamada `app-network`, garantindo isolamento e resolução de nomes (o container da aplicação encontra o banco pelo hostname `postgres-db`).
 
@@ -316,7 +316,7 @@ chmod +x scripts/*.sh
 ### Baixar a aplicação que será deployada no conteiner no EC2
 Comando: 
 ```bash
-git clone https://github.com/dhuberto/docker.git app-nodejs
+git clone https://github.com/dhuberto/docker.git app-go
 ```
 
 
